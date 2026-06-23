@@ -1,0 +1,70 @@
+# =========================================
+# HAPROID ROBOTS.TXT
+# =========================================
+
+User-agent: *
+Allow: /
+
+# -----------------------------------------
+# PWA FILES
+# -----------------------------------------
+
+Allow: /manifest.json
+Allow: /service-worker.js
+
+# -----------------------------------------
+# MAIN WEBSITE PAGES
+# -----------------------------------------
+
+Allow: /index.html
+
+
+Disallow: /403.html
+
+# -----------------------------------------
+# IMPORTANT DIRECTORIES
+# -----------------------------------------
+
+Allow: /assets/
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+Allow: /assets/json/
+
+# -----------------------------------------
+# BLOCK PRIVATE OR SYSTEM FILES
+# -----------------------------------------
+
+Disallow: /101/
+
+
+# -----------------------------------------
+# BLOCK SEARCH PARAMETERS
+# -----------------------------------------
+
+Disallow: /*?replytocom=
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?filter=
+Disallow: /view-source:
+Disallow: /view-source:https://vishnupursmr.netlify.app/home.html
+
+# -----------------------------------------
+# SEARCH ENGINE SPECIFIC RULES
+# -----------------------------------------
+
+User-agent: Bingbot
+Crawl-delay: 5
+
+User-agent: Slurp
+Crawl-delay: 10
+
+# -----------------------------------------
+# SITEMAP
+# -----------------------------------------
+
+Sitemap: https://vishnupursmr.netlify.app/sitemap.xml
+
+# =========================================
+# END OF FILE
+# =========================================

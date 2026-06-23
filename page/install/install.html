@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-In">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Install Vishnupur SMR (Sitamarhi) App </title>
+
+  <meta name="description"
+    content="Install the official Vishnupur SMR App to access village information, community updates, development projects, public services, announcements, and local resources of Vishnupur, Sitamarhi, Bihar.">
+
+  <meta name="keywords"
+    content="Vishnupur, Vishnupur Sitamarhi, Vishnupur Bihar, Vishnupur SMR, Village Portal, Gram Panchayat, Sitamarhi Village, Bihar Village, Community Updates, Public Services, Village Information">
+
+  <meta name="author" content="Haproven">
+
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Install Vishnupur SMR App">
+  <meta property="og:description"
+    content="Official digital platform of Vishnupur, Sitamarhi, Bihar. Install the app for village updates, announcements, services, and community information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vishnupursmr.netlify.app/page/install/index.html">
+  <meta property="og:image" content="/assets/img/vishnupursmr-logo.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Install Vishnupur SMR App">
+  <meta name="twitter:description"
+    content="Official Vishnupur village app for community updates, services, and announcements.">
+
+  <!-- <meta name="theme-color" content="#182848"> -->
+
+  <link rel="canonical" href="https://vishnupursmr.netlify.app/page/install/index.html">
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      background: rgba(0, 0, 0, .3);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      background: #00e676;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>📲 Vishnupur SMR App</h1>
+    <p>अपने मोबाइल में ऐप इंस्टॉल करें</p>
+    <button id="installBtn">Add to Home Screen</button>
+  </div>
+
+  <script>
+    let deferredPrompt;
+    const installBtn = document.getElementById("installBtn");
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    installBtn.onclick = async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    };
+  </script>
+
+</body>
+
+</html>

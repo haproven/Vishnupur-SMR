@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Access Forbidden | Haproid</title>
+
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Access denied. You do not have permission to view this page.">
+
+    <script src="/Assets/JS/page-protector.js"></script>
+    <script src="/Assets/JS/main/meta.js"></script>
+
+
+    </style>
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            /* background: radial-gradient(circle at top left, #1e293b, #020617); */
+            background: radial-gradient(circle at top left, #3b1e1e, #020617);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+
+
+        }
+
+        /* background glow */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+            position: fixed;
+        }
+
+        body::before {
+            width: 400px;
+            height: 400px;
+            background: rgba(248, 56, 56, 0.476);
+            top: -100px;
+            left: -100px;
+
+
+        }
+
+        body::after {
+            width: 350px;
+            height: 350px;
+            /* background: rgba(37, 99, 235, 0.15); */
+            bottom: -100px;
+            right: -100px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            z-index: 1;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: clamp(64px, 15vw, 110px);
+            font-weight: 900;
+            /* color: #38bdf8; */
+            color: #ef4444;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: clamp(20px, 5vw, 28px);
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: clamp(14px, 4vw, 16px);
+            color: #cbd5e1;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        a {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #ff3434d1, #fe3333af);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all .3s ease;
+        }
+
+        a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .4);
+        }
+
+        .small {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        #backBtn {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            font-size: 13px;
+            background: #ef444400;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff00;
+            /* padding: 0px 0px; */
+            padding: 20px 20px;
+            cursor: pointer;
+            z-index: 999;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔁 Smart Back Button -->
+    <button id="backBtn" onclick="smartBack()">Go Back</button>
+
+    <div class="container">
+        <h1>403</h1>
+        <h2>🔒 Private Content</h2>
+        <p>
+            You are not authorized to view this content.
+            If you believe this is an error, please contact the administrator for assistance.
+        </p>
+        <a href="/">Go Back Home</a>
+        <p class="small">You will be redirected automatically in 10 seconds.</p>
+    </div>
+
+    <script>
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 10000);
+  </script>
+
+
+    <script src="/Assets/JS/access-control.js"></script>
+    
+    <script>
+        function smartBack() {
+
+            const params = new URLSearchParams(window.location.search);
+            const fromPage = params.get("from");
+
+            if (fromPage) {
+
+                // 🔥 Set temporary allow flag
+                sessionStorage.setItem("allowOnce", "true");
+
+                window.location.href = fromPage;
+                return;
+            }
+
+            window.location.href = "/";
+        }
+    </script>
+
+
+
+</body>
+
+</html>
