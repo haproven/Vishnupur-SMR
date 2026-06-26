@@ -22,10 +22,50 @@
 
   <header>
     <nav class="nav">
-      <a href="">
-        <div class="logo"><img src="/assets/img/vishnupursmr-icon.webp" alt="" style="height: 6vh; margin-top: 9px;">
-        </div>
+
+      <a href="javascript:void(0)" class="logo" onclick="toggleMenu()">
+        <img src="/assets/img/vishnupursmr-icon.webp" alt="" style="height: 6vh; margin-top: 9px;">
       </a>
+
+      <section id="home">
+        <a href="">Eng</a>
+        <a href="">About</a>
+        <a href="">Info</a>
+      </section>
+
+      <style>
+        #home {
+          position: fixed;
+          top: -100%;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: #111;
+          transition: .4s;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          z-index: 999;
+        }
+
+        #home.active {
+          top: 0;
+        }
+
+        #home a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.2rem;
+        }
+      </style>
+
+      <script>
+        function toggleMenu() {
+          document.getElementById("home").classList.toggle("active");
+        }
+      </script>
 
 
       <div class="m-senter">
@@ -53,6 +93,7 @@
           <h2>🔗Page </h2>
           <a href="/page/install/">About</a>
           <a href="/page/install/">Contact</a>
+
           <button onclick="sharePage()">📤 Share</button>
 
           <script>
@@ -70,6 +111,8 @@
               }
             }
           </script>
+
+
 
         </div>
         <!-- ===== Social Media Links with Icons ===== -->
@@ -449,7 +492,7 @@
   </main>
 
 
- 
+
 
 
 
