@@ -53,12 +53,24 @@
           <h2>🔗Page </h2>
           <a href="/page/install/">About</a>
           <a href="/page/install/">Contact</a>
-          <a href="">Share</a>
+          <button onclick="sharePage()">📤 Share</button>
+
           <script>
-            if ("serviceWorker" in navigator) {
-              navigator.serviceWorker.register("/service-worker.js");
+            function sharePage() {
+              const url = "https://vishnupursmr.netlify.app/";
+
+              if (navigator.share) {
+                navigator.share({
+                  title: "Vishnupur SMR",
+                  text: "Visit Vishnupur SMR",
+                  url: url
+                });
+              } else {
+                window.open(url, "_blank");
+              }
             }
           </script>
+
         </div>
         <!-- ===== Social Media Links with Icons ===== -->
         <div class="social-links" style="   border-radius:8px;">
@@ -148,7 +160,9 @@
         विष्णुपुर SMR (सीतामढ़ी) गाँव आधिकारिक ऐप
       </h3>
     </section>
-    <section class="content-section active">
+
+
+    <section class="content-section active" style="display: none;">
       <ul class="se-u2">
         <li>
           <p> 1️⃣ Vishnupur SMR App** आपके गाँव (सीतामढ़ी) की पूरी जानकारी एक ही जगह लाता है ।</p>
@@ -219,7 +233,8 @@
         <li class="li">
           <a href="https://codersusheel.netlify.app/" target="_blank">
             <div class="div">
-              <img class="div" src="https://haproid.netlify.app/assets/img/user/pro-susheel-01/susheel.webp" alt="codersusheel img">
+              <img class="div" src="https://haproid.netlify.app/assets/img/user/pro-susheel-01/susheel.webp"
+                alt="codersusheel img">
             </div>
             <b>susheelcoder</b>
           </a>
