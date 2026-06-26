@@ -14,10 +14,25 @@ closeBtn.addEventListener("click", () => {
 
 
 
-window.matchMedia('(display-mode: standalone)').matches
+const isPWA =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
 
+const path = window.location.pathname;
 
+// Root page
+if (path === "/" || path === "/index.html") {
+    if (isPWA) {
+        window.location.replace("/page/dashboard/");
+    }
+}
 
+// Dashboard page
+if (path === "/page/dashboard/" || path === "/page/dashboard/index.html") {
+    if (!isPWA) {
+        window.location.replace("/");
+    }
+}
 
 
 
