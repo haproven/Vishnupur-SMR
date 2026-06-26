@@ -451,20 +451,27 @@
 
 
 
-<script>
-const isPWA =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.navigator.standalone === true;
-
-document.body.innerHTML =
-    "<h1>PWA: " + isPWA + "</h1>";
-</script>
 
 
+  <body style="display:none">
 
-  <script src="/2.JS/app.js"></script>
-  <script src="/assets/js/script.js"></script>
-</body>
+    <script>
+      const isPWA =
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true;
+
+      if (!isPWA) {
+        location.replace("/");
+      } else {
+        document.body.style.display = "block";
+      }
+    </script>
+
+
+
+    <script src="/2.JS/app.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
 
 
 </html>
