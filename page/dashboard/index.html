@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body style="display:none;">
 
   <!-- =======
    Header 
@@ -451,18 +451,19 @@
 
 
 
-<script>
-(function () {
-    const isPWA =
-        window.matchMedia('(display-mode: standalone)').matches ||
-        window.navigator.standalone === true ||
-        document.referrer.includes('android-app://');
 
-    if (!isPWA) {
-        window.location.href = "/";
-        return;
-    }
-})();
+
+<script>
+const isPWA =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true ||
+    document.referrer.includes('android-app://');
+
+if (isPWA) {
+    document.body.style.display = "block";
+} else {
+    location.replace("/");
+}
 </script>
 
 
