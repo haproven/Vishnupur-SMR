@@ -8,7 +8,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#4b6cb7",
-  "background_color": "#ffff00ce",
+  "background_color": "#fffff88",
   "icons": [
     {
       "src": "/assets/img/vishnupursmr-logo.webp",
