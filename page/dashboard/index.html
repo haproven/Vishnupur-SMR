@@ -451,16 +451,19 @@
 
 
 
-  <script>
+<script>
+(function () {
     const isPWA =
-      window.matchMedia('(display-mode: standalone)').matches ||
-      window.navigator.standalone === true;
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true ||
+        document.referrer.includes('android-app://');
 
     if (!isPWA) {
-      window.location.replace("https://vishnupursmi.netlify.app/");
+        window.location.href = "/";
+        return;
     }
-  </script>
-
+})();
+</script>
 
 
 
