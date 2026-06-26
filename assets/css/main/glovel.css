@@ -157,8 +157,8 @@ a:hover {
 /* Close Button */
 .close-btn {
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 19px;
+    top: -3px;
     font-size: 30px;
     color: white;
     cursor: pointer;
@@ -183,6 +183,11 @@ a:hover {
 
         display: none;
     } */
+
+    .side-menu {
+
+    width: 226px;
+}
 
     .m-senter {
         text-align: center;
