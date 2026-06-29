@@ -426,7 +426,7 @@ h2 {
         justify-items: center;
         justify-content: end;
         position: fixed;
-        /* z-index: 99; */
+        z-index: 9;
         /* margin-right: 0; */
     }
 
