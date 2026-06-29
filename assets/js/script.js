@@ -12,6 +12,17 @@ closeBtn.addEventListener("click", () => {
     sideMenu.classList.remove("active");
 });
 
+//=============================================================
+
+function openInfo() {
+    document.getElementById("infoBox").classList.add("active");
+}
+
+function closeInfo() {
+    document.getElementById("infoBox").classList.remove("active");
+}
+
+//=============================================================
 
 
 

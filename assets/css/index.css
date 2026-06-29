@@ -7,7 +7,7 @@ section {
 }
 
 .se1 {
-     margin-top: 5vh;
+    margin-top: 5vh;
     background-color: #ffffd5;
 
 
@@ -22,10 +22,10 @@ section {
     /* .se-u2 {
         display: none;
     } */
-     
-     .se-u2 li{
+
+    .se-u2 li {
         padding: 2px;
-     }
+    }
 }
 
 .se-u2 {
@@ -531,7 +531,8 @@ h2 {
         align-items: center;
         flex-direction: column;
     }
-    .nav-grid span{
+
+    .nav-grid span {
         color: #3b82f6;
     }
 }
@@ -603,3 +604,56 @@ h2 {
         max-width: 1200px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================ */
+#infoBox {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    /* Left side se hidden */
+    width: 300px;
+    height: 100vh;
+    background: #111;
+    color: white;
+    padding: 20px;
+    transition: .3s;
+    z-index: 1000;
+}
+
+#infoBox.active {
+    left: 0;
+    /* Open hoga */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#infoBox a {
+    display: block;
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+/* =========================== */
